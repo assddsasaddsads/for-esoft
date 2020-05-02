@@ -1,4 +1,4 @@
-﻿// Создание кода T4 для модели "C:\Users\Александр\Desktop\college\esoft\Esoft_Project\Esoft_Project\ModelTutorial.edmx" включено. 
+﻿// Создание кода T4 для модели "C:\Users\Александр\Desktop\college\esoft\Esoft_Project\Esoft_Project\ModelWFTutorial.edmx" включено. 
 // Чтобы включить формирование кода прежних версий, измените значение свойства "Стратегия создания кода" конструктора
 // на "Legacy ObjectContext". Это свойство доступно в окне "Свойства", если модель
 // открыта в конструкторе.

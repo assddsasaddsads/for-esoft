@@ -74,6 +74,7 @@
             this.buttonRealEstates.TabIndex = 3;
             this.buttonRealEstates.Text = "Объекты недвижимости";
             this.buttonRealEstates.UseVisualStyleBackColor = true;
+            this.buttonRealEstates.Click += new System.EventHandler(this.buttonRealEstates_Click);
             // 
             // buttonOpenDemands
             // 

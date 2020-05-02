@@ -23,5 +23,12 @@ namespace Esoft_Project
             Form formclient = new FormClient();
             formclient.Show();
         }
+
+        private void buttonRealEstates_Click(object sender, EventArgs e)
+        {
+            //Задаем новую форму из классов Объекты недвижимости и открываем ее
+            Form formRealEstate = new FormRealEstate();
+            formRealEstate.Show();
+        }
     }
 }
