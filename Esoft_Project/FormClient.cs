@@ -85,7 +85,7 @@ namespace Esoft_Project
             {
                 //ищем элементы из таблицы по тегу
                 ClientsSet clientsSet = listViewClient.SelectedItems[0].Tag as ClientsSet;
-                //указываем, что омжет быть изменено
+                //указываем, что может быть изменено
                 textBoxFirstName.Text = clientsSet.FirtsName;
                 textBoxMiddleName.Text = clientsSet.MiddleName;
                 textBoxLastName.Text = clientsSet.LastName;

@@ -20,7 +20,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Address_City" Type="nvarchar(max)" />
           <Property Name="Address_Street" Type="nvarchar(max)" />
           <Property Name="Address_House" Type="nvarchar(max)" />
@@ -33,9 +33,20 @@
           <Property Name="Rooms" Type="int" />
           <Property Name="Floor" Type="int" />
         </EntityType>
+        <EntityType Name="RealtorsSet">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LastName" Type="nvarchar(max)" />
+          <Property Name="FirstName" Type="nvarchar(max)" />
+          <Property Name="MiddleName" Type="nvarchar(max)" />
+          <Property Name="Share" Type="nvarchar(max)" />
+        </EntityType>
         <EntityContainer Name="Хранилище WFTutorialModelContainer">
           <EntitySet Name="ClientsSet" EntityType="Self.ClientsSet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="RealEstateSet" EntityType="Self.RealEstateSet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RealtorsSet" EntityType="Self.RealtorsSet" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
@@ -57,7 +68,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Address_City" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Address_Street" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Address_House" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
@@ -70,16 +81,27 @@
           <Property Name="Rooms" Type="Int32" />
           <Property Name="Floor" Type="Int32" />
         </EntityType>
-        <EntityContainer Name="WFTutorialEntities3" annotation:LazyLoadingEnabled="true">
+        <EntityType Name="RealtorsSet">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LastName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FirstName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MiddleName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Share" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="WFTutorialEntities7" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="ClientsSet" EntityType="Self.ClientsSet" />
           <EntitySet Name="RealEstateSet" EntityType="Self.RealEstateSet" />
+          <EntitySet Name="RealtorsSet" EntityType="Self.RealtorsSet" />
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище WFTutorialModelContainer" CdmEntityContainer="WFTutorialEntities3">
+        <EntityContainerMapping StorageEntityContainer="Хранилище WFTutorialModelContainer" CdmEntityContainer="WFTutorialEntities7">
           <EntitySetMapping Name="ClientsSet">
             <EntityTypeMapping TypeName="WFTutorialModel.ClientsSet">
               <MappingFragment StoreEntitySet="ClientsSet">
@@ -107,6 +129,17 @@
                 <ScalarProperty Name="TotalFloors" ColumnName="TotalFloors" />
                 <ScalarProperty Name="Rooms" ColumnName="Rooms" />
                 <ScalarProperty Name="Floor" ColumnName="Floor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RealtorsSet">
+            <EntityTypeMapping TypeName="WFTutorialModel.RealtorsSet">
+              <MappingFragment StoreEntitySet="RealtorsSet">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="Share" ColumnName="Share" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
