@@ -32,7 +32,7 @@
             this.buttonOpenClients = new System.Windows.Forms.Button();
             this.buttonOpenAgents = new System.Windows.Forms.Button();
             this.buttonRealEstates = new System.Windows.Forms.Button();
-            this.buttonOpenDemands = new System.Windows.Forms.Button();
+            this.buttonOpenSupplySet = new System.Windows.Forms.Button();
             this.buttonOpenSupplies = new System.Windows.Forms.Button();
             this.buttonOpenDeals = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -77,14 +77,15 @@
             this.buttonRealEstates.UseVisualStyleBackColor = true;
             this.buttonRealEstates.Click += new System.EventHandler(this.buttonRealEstates_Click);
             // 
-            // buttonOpenDemands
+            // buttonOpenSupplySet
             // 
-            this.buttonOpenDemands.Location = new System.Drawing.Point(12, 310);
-            this.buttonOpenDemands.Name = "buttonOpenDemands";
-            this.buttonOpenDemands.Size = new System.Drawing.Size(265, 48);
-            this.buttonOpenDemands.TabIndex = 4;
-            this.buttonOpenDemands.Text = "Предложения";
-            this.buttonOpenDemands.UseVisualStyleBackColor = true;
+            this.buttonOpenSupplySet.Location = new System.Drawing.Point(12, 310);
+            this.buttonOpenSupplySet.Name = "buttonOpenSupplySet";
+            this.buttonOpenSupplySet.Size = new System.Drawing.Size(265, 48);
+            this.buttonOpenSupplySet.TabIndex = 4;
+            this.buttonOpenSupplySet.Text = "Предложения";
+            this.buttonOpenSupplySet.UseVisualStyleBackColor = true;
+            this.buttonOpenSupplySet.Click += new System.EventHandler(this.buttonOpenSupplySet_Click_1);
             // 
             // buttonOpenSupplies
             // 
@@ -111,7 +112,7 @@
             this.ClientSize = new System.Drawing.Size(279, 561);
             this.Controls.Add(this.buttonOpenDeals);
             this.Controls.Add(this.buttonOpenSupplies);
-            this.Controls.Add(this.buttonOpenDemands);
+            this.Controls.Add(this.buttonOpenSupplySet);
             this.Controls.Add(this.buttonRealEstates);
             this.Controls.Add(this.buttonOpenAgents);
             this.Controls.Add(this.buttonOpenClients);
@@ -130,7 +131,7 @@
         private System.Windows.Forms.Button buttonOpenClients;
         private System.Windows.Forms.Button buttonOpenAgents;
         private System.Windows.Forms.Button buttonRealEstates;
-        private System.Windows.Forms.Button buttonOpenDemands;
+        private System.Windows.Forms.Button buttonOpenSupplySet;
         private System.Windows.Forms.Button buttonOpenSupplies;
         private System.Windows.Forms.Button buttonOpenDeals;
     }

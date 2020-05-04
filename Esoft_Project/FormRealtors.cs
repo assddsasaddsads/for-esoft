@@ -51,7 +51,7 @@ namespace Esoft_Project
                 ListViewItem item = new ListViewItem(new string[]
                 {
                     //указываем необходимые поля
-                    realtorsSet.ID.ToString(), realtorsSet.LastName, realtorsSet.FirstName,
+                    realtorsSet.Id.ToString(), realtorsSet.LastName, realtorsSet.FirstName,
                     realtorsSet.MiddleName, realtorsSet.Share
                 });
                 //указываем по какому тегу будем брать элементы

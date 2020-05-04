@@ -4,10 +4,14 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="cc6748de46844234b32ba5c554046f76" Name="Diagram1">
-        <EntityTypeShape EntityType="WFTutorialModel.ClientsSet" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="WFTutorialModel.RealEstateSet" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="WFTutorialModel.RealtorsSet" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+      <Diagram DiagramId="cc1c7003dd0e4443a6104706b8290f58" Name="Diagram1" ZoomLevel="99">
+        <EntityTypeShape EntityType="WFTutorialModel.ClientsSet" Width="1.5" PointX="0.875" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="WFTutorialModel.RealEstateSet" Width="1.5" PointX="0.875" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="WFTutorialModel.RealtorsSet" Width="1.5" PointX="0.875" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="WFTutorialModel.SupplySet" Width="1.5" PointX="7" PointY="3.25" IsExpanded="true" />
+        <AssociationConnector Association="WFTutorialModel.FK_SupplySet_ClientsSet" ManuallyRouted="false" />
+        <AssociationConnector Association="WFTutorialModel.FK_SupplySet_RealEstateSet" ManuallyRouted="false" />
+        <AssociationConnector Association="WFTutorialModel.FK_SupplySet_RealtorsSet" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
