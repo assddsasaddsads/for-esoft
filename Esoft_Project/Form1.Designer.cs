@@ -95,6 +95,7 @@
             this.buttonOpenSupplies.TabIndex = 5;
             this.buttonOpenSupplies.Text = "Потребности";
             this.buttonOpenSupplies.UseVisualStyleBackColor = true;
+            this.buttonOpenSupplies.Click += new System.EventHandler(this.buttonOpenSupplies_Click);
             // 
             // buttonOpenDeals
             // 
@@ -104,6 +105,7 @@
             this.buttonOpenDeals.TabIndex = 6;
             this.buttonOpenDeals.Text = "Сделки";
             this.buttonOpenDeals.UseVisualStyleBackColor = true;
+            this.buttonOpenDeals.Click += new System.EventHandler(this.buttonOpenDeals_Click);
             // 
             // Menu
             // 

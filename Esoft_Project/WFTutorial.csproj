@@ -55,7 +55,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AgentsSet.cs">
+      <DependentUpon>ModelWFTutorial.tt</DependentUpon>
+    </Compile>
     <Compile Include="ClientsSet.cs">
+      <DependentUpon>ModelWFTutorial.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DealSet.cs">
+      <DependentUpon>ModelWFTutorial.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DemandSet.cs">
       <DependentUpon>ModelWFTutorial.tt</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
@@ -69,6 +78,18 @@
     </Compile>
     <Compile Include="FormClient.Designer.cs">
       <DependentUpon>FormClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDeal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDeal.Designer.cs">
+      <DependentUpon>FormDeal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDemand.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDemand.Designer.cs">
+      <DependentUpon>FormDemand.cs</DependentUpon>
     </Compile>
     <Compile Include="FormRealEsta.cs">
       <SubType>Form</SubType>
@@ -108,9 +129,6 @@
     <Compile Include="RealEstateSet.cs">
       <DependentUpon>ModelWFTutorial.tt</DependentUpon>
     </Compile>
-    <Compile Include="RealtorsSet.cs">
-      <DependentUpon>ModelWFTutorial.tt</DependentUpon>
-    </Compile>
     <Compile Include="SupplySet.cs">
       <DependentUpon>ModelWFTutorial.tt</DependentUpon>
     </Compile>
@@ -119,6 +137,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormClient.resx">
       <DependentUpon>FormClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDeal.resx">
+      <DependentUpon>FormDeal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDemand.resx">
+      <DependentUpon>FormDemand.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormRealEsta.resx">
       <DependentUpon>FormRealEsta.cs</DependentUpon>

@@ -29,7 +29,7 @@ namespace Esoft_Project
         {
             //очищаем comboBox 
             comboBoxAgents.Items.Clear();
-            foreach (RealtorsSet realtorsSet in Program.wftdb.RealtorsSet)
+            foreach (AgentsSet realtorsSet in Program.wftdb.AgentsSet)
             {
                 //Добавляем информацию, которую хотим видеть в строке comboBox-a
                 //Можно настроить по своему усмотрению, добавить/удалить некоторые элементы и сокращения
@@ -48,7 +48,7 @@ namespace Esoft_Project
                 //Добавляем информацию, которую хотим видеть в строке comboBox-a
                 //Можно настроить по своему усмотрению, добавить/удалить некоторые элементы и сокращения
                 //главное, не убирать ID, так как он нужен для дальнейшей работы
-                string[] item = { clientsSet.id.ToString() + ".", clientsSet.FirtsName, clientsSet.MiddleName, clientsSet.LastName };
+                string[] item = { clientsSet.Id.ToString() + ".", clientsSet.FirtsName, clientsSet.MiddleName, clientsSet.LastName };
                 comboBoxClients.Items.Add(string.Join("", item));
             }
         }
@@ -106,7 +106,7 @@ namespace Esoft_Project
                     //ID риелтора
                     supply.IdAgent.ToString(),
                     //ФИО риелтора (фамилия+имя+отчество)
-                    supply.RealtorsSet.LastName+" "+supply.RealtorsSet.FirstName+" "+supply.RealtorsSet.MiddleName,
+                    supply.AgentsSet.LastName+" "+supply.AgentsSet.FirstName+" "+supply.AgentsSet.MiddleName,
                     supply.IdClient.ToString(),
                     supply.ClientsSet.LastName+" "+supply.ClientsSet.FirtsName+" "+supply.ClientsSet.MiddleName,
                     supply.IdRealEstate.ToString(),
@@ -119,6 +119,7 @@ namespace Esoft_Project
                 item.Tag = supply;
                 //добавляем элементы в listviewRealEstateSet_Apartment для отображения
                 listViewSupplySet.Items.Add(item);
+                listViewSupplySet.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
             }
         }
 

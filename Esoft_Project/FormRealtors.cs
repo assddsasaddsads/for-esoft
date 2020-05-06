@@ -27,14 +27,14 @@ namespace Esoft_Project
         private void buttonAdd_Click(object sender, EventArgs e)
         {
             //создаем новый экземпляр класса
-            RealtorsSet realtorsSet = new RealtorsSet();
+            AgentsSet realtorsSet = new AgentsSet();
             //делаем ссылку на объект, который хранится в textBox-ax
             realtorsSet.LastName = textBoxLastName.Text;
             realtorsSet.FirstName = textBoxFirstName.Text;
             realtorsSet.MiddleName = textBoxMiddleName.Text;
             realtorsSet.Share = textBoxShare.Text;
             //добавляем в таблицу RealtorsSet нового риелтора
-            Program.wftdb.RealtorsSet.Add(realtorsSet);
+            Program.wftdb.AgentsSet.Add(realtorsSet);
             //сохраняем изменения в модели wftDb
             Program.wftdb.SaveChanges();
             ShowRealtors();
@@ -44,7 +44,7 @@ namespace Esoft_Project
             //очищаем listView
             listViewRealtors.Items.Clear();
             //проходимся по коллекции риелторов, которые находятся в базе с помощью foreach
-            foreach (RealtorsSet realtorsSet in Program.wftdb.RealtorsSet)
+            foreach (AgentsSet realtorsSet in Program.wftdb.AgentsSet)
             {
                 //создаем новый элемент в listView
                 //для этого создаем новый массив строк
@@ -69,7 +69,7 @@ namespace Esoft_Project
             if (listViewRealtors.SelectedItems.Count ==1)
             {
                 //ищем элемент из таблицы по тегу
-                RealtorsSet realtorsSet = listViewRealtors.SelectedItems[0].Tag as RealtorsSet;
+                AgentsSet realtorsSet = listViewRealtors.SelectedItems[0].Tag as AgentsSet;
                 //указываем, что может быть изменено
                 realtorsSet.LastName = textBoxLastName.Text;
                 realtorsSet.FirstName = textBoxFirstName.Text;
@@ -88,7 +88,7 @@ namespace Esoft_Project
             if (listViewRealtors.SelectedItems.Count ==1)
             {
                 //ищем элемент из таблицы по тегу
-                RealtorsSet realtorsSet = listViewRealtors.SelectedItems[0].Tag as RealtorsSet;
+                AgentsSet realtorsSet = listViewRealtors.SelectedItems[0].Tag as AgentsSet;
                 //указываем, что может быть изменено
                 textBoxLastName.Text = realtorsSet.LastName;
                 textBoxFirstName.Text = realtorsSet.FirstName;
@@ -114,9 +114,9 @@ namespace Esoft_Project
                 if (listViewRealtors.SelectedItems.Count ==1)
                 {
                     //ищем этот элемент, сверяем его
-                    RealtorsSet realtorsSet = listViewRealtors.SelectedItems[0].Tag as RealtorsSet;
+                    AgentsSet realtorsSet = listViewRealtors.SelectedItems[0].Tag as AgentsSet;
                     //удаляем из модели и базы данных
-                    Program.wftdb.RealtorsSet.Remove(realtorsSet);
+                    Program.wftdb.AgentsSet.Remove(realtorsSet);
                     //сохраняем изменения
                     Program.wftdb.SaveChanges();
                     //отображаем обновленный список

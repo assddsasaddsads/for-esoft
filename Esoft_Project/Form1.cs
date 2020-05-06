@@ -54,5 +54,17 @@ namespace Esoft_Project
             Form formsupply = new FormSupply();
             formsupply.Show();
         }
+
+        private void buttonOpenSupplies_Click(object sender, EventArgs e)
+        {
+            Form formdemand = new FormDemand();
+            formdemand.Show();
+        }
+
+        private void buttonOpenDeals_Click(object sender, EventArgs e)
+        {
+            Form formdeal = new FormDeal();
+            formdeal.Show();
+        }
     }
 }

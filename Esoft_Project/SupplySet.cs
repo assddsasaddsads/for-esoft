@@ -14,14 +14,22 @@ namespace Esoft_Project
     
     public partial class SupplySet
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public SupplySet()
+        {
+            this.DealSet = new HashSet<DealSet>();
+        }
+    
         public int Id { get; set; }
         public int IdAgent { get; set; }
         public int IdClient { get; set; }
         public int IdRealEstate { get; set; }
         public long Price { get; set; }
     
+        public virtual AgentsSet AgentsSet { get; set; }
         public virtual ClientsSet ClientsSet { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DealSet> DealSet { get; set; }
         public virtual RealEstateSet RealEstateSet { get; set; }
-        public virtual RealtorsSet RealtorsSet { get; set; }
     }
 }

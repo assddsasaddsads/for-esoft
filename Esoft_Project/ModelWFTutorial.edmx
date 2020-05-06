@@ -5,16 +5,53 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
       <Schema Namespace="Хранилище WFTutorialModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AgentsSet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LastName" Type="nvarchar(max)" />
+          <Property Name="FirstName" Type="nvarchar(max)" />
+          <Property Name="MiddleName" Type="nvarchar(max)" />
+          <Property Name="Share" Type="nvarchar(max)" />
+        </EntityType>
         <EntityType Name="ClientsSet">
           <Key>
-            <PropertyRef Name="id" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="FirtsName" Type="nvarchar(max)" />
           <Property Name="MiddleName" Type="nvarchar(max)" />
           <Property Name="LastName" Type="nvarchar(max)" />
           <Property Name="Phone" Type="nvarchar(max)" />
           <Property Name="Email" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="DealSet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdSupply" Type="int" Nullable="false" />
+          <Property Name="IdDemand" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DemandSet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdAgent" Type="int" Nullable="false" />
+          <Property Name="IdClient" Type="int" Nullable="false" />
+          <Property Name="Type" Type="int" />
+          <Property Name="MinPrice" Type="bigint" />
+          <Property Name="MaxPrice" Type="bigint" />
+          <Property Name="MinArea" Type="float" />
+          <Property Name="MaxArea" Type="float" />
+          <Property Name="MinRooms" Type="int" />
+          <Property Name="MaxRooms" Type="int" />
+          <Property Name="MinFloor" Type="int" />
+          <Property Name="MaxFloor" Type="int" />
+          <Property Name="MinFloors" Type="int" />
+          <Property Name="MaxFloors" Type="int" />
         </EntityType>
         <EntityType Name="RealEstateSet">
           <Key>
@@ -33,16 +70,6 @@
           <Property Name="Rooms" Type="int" />
           <Property Name="Floor" Type="int" />
         </EntityType>
-        <EntityType Name="RealtorsSet">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="LastName" Type="nvarchar(max)" />
-          <Property Name="FirstName" Type="nvarchar(max)" />
-          <Property Name="MiddleName" Type="nvarchar(max)" />
-          <Property Name="Share" Type="nvarchar(max)" />
-        </EntityType>
         <EntityType Name="SupplySet">
           <Key>
             <PropertyRef Name="Id" />
@@ -53,12 +80,72 @@
           <Property Name="IdRealEstate" Type="int" Nullable="false" />
           <Property Name="Price" Type="bigint" Nullable="false" />
         </EntityType>
+        <Association Name="FK_DealSet_DemandSet">
+          <End Role="DemandSet" Type="Self.DemandSet" Multiplicity="1" />
+          <End Role="DealSet" Type="Self.DealSet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DemandSet">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DealSet">
+              <PropertyRef Name="IdDemand" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DealSet_SupplySet">
+          <End Role="SupplySet" Type="Self.SupplySet" Multiplicity="1" />
+          <End Role="DealSet" Type="Self.DealSet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SupplySet">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DealSet">
+              <PropertyRef Name="IdSupply" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DemandSet_AgentsSet">
+          <End Role="AgentsSet" Type="Self.AgentsSet" Multiplicity="1" />
+          <End Role="DemandSet" Type="Self.DemandSet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AgentsSet">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DemandSet">
+              <PropertyRef Name="IdAgent" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DemandSet_ClientsSet">
+          <End Role="ClientsSet" Type="Self.ClientsSet" Multiplicity="1" />
+          <End Role="DemandSet" Type="Self.DemandSet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ClientsSet">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DemandSet">
+              <PropertyRef Name="IdClient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SupplySet_AgentsSet">
+          <End Role="AgentsSet" Type="Self.AgentsSet" Multiplicity="1" />
+          <End Role="SupplySet" Type="Self.SupplySet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AgentsSet">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SupplySet">
+              <PropertyRef Name="IdAgent" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_SupplySet_ClientsSet">
           <End Role="ClientsSet" Type="Self.ClientsSet" Multiplicity="1" />
           <End Role="SupplySet" Type="Self.SupplySet" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="ClientsSet">
-              <PropertyRef Name="id" />
+              <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="SupplySet">
               <PropertyRef Name="IdClient" />
@@ -77,23 +164,33 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_SupplySet_RealtorsSet">
-          <End Role="RealtorsSet" Type="Self.RealtorsSet" Multiplicity="1" />
-          <End Role="SupplySet" Type="Self.SupplySet" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="RealtorsSet">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="SupplySet">
-              <PropertyRef Name="IdAgent" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="Хранилище WFTutorialModelContainer">
+          <EntitySet Name="AgentsSet" EntityType="Self.AgentsSet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ClientsSet" EntityType="Self.ClientsSet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DealSet" EntityType="Self.DealSet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DemandSet" EntityType="Self.DemandSet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="RealEstateSet" EntityType="Self.RealEstateSet" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="RealtorsSet" EntityType="Self.RealtorsSet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SupplySet" EntityType="Self.SupplySet" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_DealSet_DemandSet" Association="Self.FK_DealSet_DemandSet">
+            <End Role="DemandSet" EntitySet="DemandSet" />
+            <End Role="DealSet" EntitySet="DealSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DealSet_SupplySet" Association="Self.FK_DealSet_SupplySet">
+            <End Role="SupplySet" EntitySet="SupplySet" />
+            <End Role="DealSet" EntitySet="DealSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DemandSet_AgentsSet" Association="Self.FK_DemandSet_AgentsSet">
+            <End Role="AgentsSet" EntitySet="AgentsSet" />
+            <End Role="DemandSet" EntitySet="DemandSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DemandSet_ClientsSet" Association="Self.FK_DemandSet_ClientsSet">
+            <End Role="ClientsSet" EntitySet="ClientsSet" />
+            <End Role="DemandSet" EntitySet="DemandSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SupplySet_AgentsSet" Association="Self.FK_SupplySet_AgentsSet">
+            <End Role="AgentsSet" EntitySet="AgentsSet" />
+            <End Role="SupplySet" EntitySet="SupplySet" />
+          </AssociationSet>
           <AssociationSet Name="FK_SupplySet_ClientsSet" Association="Self.FK_SupplySet_ClientsSet">
             <End Role="ClientsSet" EntitySet="ClientsSet" />
             <End Role="SupplySet" EntitySet="SupplySet" />
@@ -102,27 +199,68 @@
             <End Role="RealEstateSet" EntitySet="RealEstateSet" />
             <End Role="SupplySet" EntitySet="SupplySet" />
           </AssociationSet>
-          <AssociationSet Name="FK_SupplySet_RealtorsSet" Association="Self.FK_SupplySet_RealtorsSet">
-            <End Role="RealtorsSet" EntitySet="RealtorsSet" />
-            <End Role="SupplySet" EntitySet="SupplySet" />
-          </AssociationSet>
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="WFTutorialModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AgentsSet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LastName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FirstName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MiddleName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Share" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="DemandSet" Relationship="Self.FK_DemandSet_AgentsSet" FromRole="AgentsSet" ToRole="DemandSet" />
+          <NavigationProperty Name="SupplySet" Relationship="Self.FK_SupplySet_AgentsSet" FromRole="AgentsSet" ToRole="SupplySet" />
+        </EntityType>
         <EntityType Name="ClientsSet">
           <Key>
-            <PropertyRef Name="id" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="FirtsName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="MiddleName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="LastName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Phone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="DemandSet" Relationship="Self.FK_DemandSet_ClientsSet" FromRole="ClientsSet" ToRole="DemandSet" />
           <NavigationProperty Name="SupplySet" Relationship="Self.FK_SupplySet_ClientsSet" FromRole="ClientsSet" ToRole="SupplySet" />
+        </EntityType>
+        <EntityType Name="DealSet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdSupply" Type="Int32" Nullable="false" />
+          <Property Name="IdDemand" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="DemandSet" Relationship="Self.FK_DealSet_DemandSet" FromRole="DealSet" ToRole="DemandSet" />
+          <NavigationProperty Name="SupplySet" Relationship="Self.FK_DealSet_SupplySet" FromRole="DealSet" ToRole="SupplySet" />
+        </EntityType>
+        <EntityType Name="DemandSet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdAgent" Type="Int32" Nullable="false" />
+          <Property Name="IdClient" Type="Int32" Nullable="false" />
+          <Property Name="Type" Type="Int32" />
+          <Property Name="MinPrice" Type="Int64" />
+          <Property Name="MaxPrice" Type="Int64" />
+          <Property Name="MinArea" Type="Double" />
+          <Property Name="MaxArea" Type="Double" />
+          <Property Name="MinRooms" Type="Int32" />
+          <Property Name="MaxRooms" Type="Int32" />
+          <Property Name="MinFloor" Type="Int32" />
+          <Property Name="MaxFloor" Type="Int32" />
+          <Property Name="MinFloors" Type="Int32" />
+          <Property Name="MaxFloors" Type="Int32" />
+          <NavigationProperty Name="AgentsSet" Relationship="Self.FK_DemandSet_AgentsSet" FromRole="DemandSet" ToRole="AgentsSet" />
+          <NavigationProperty Name="ClientsSet" Relationship="Self.FK_DemandSet_ClientsSet" FromRole="DemandSet" ToRole="ClientsSet" />
+          <NavigationProperty Name="DealSet" Relationship="Self.FK_DealSet_DemandSet" FromRole="DemandSet" ToRole="DealSet" />
         </EntityType>
         <EntityType Name="RealEstateSet">
           <Key>
@@ -142,17 +280,6 @@
           <Property Name="Floor" Type="Int32" />
           <NavigationProperty Name="SupplySet" Relationship="Self.FK_SupplySet_RealEstateSet" FromRole="RealEstateSet" ToRole="SupplySet" />
         </EntityType>
-        <EntityType Name="RealtorsSet">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="LastName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="FirstName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="MiddleName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Share" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="SupplySet" Relationship="Self.FK_SupplySet_RealtorsSet" FromRole="RealtorsSet" ToRole="SupplySet" />
-        </EntityType>
         <EntityType Name="SupplySet">
           <Key>
             <PropertyRef Name="Id" />
@@ -162,19 +289,80 @@
           <Property Name="IdClient" Type="Int32" Nullable="false" />
           <Property Name="IdRealEstate" Type="Int32" Nullable="false" />
           <Property Name="Price" Type="Int64" Nullable="false" />
+          <NavigationProperty Name="AgentsSet" Relationship="Self.FK_SupplySet_AgentsSet" FromRole="SupplySet" ToRole="AgentsSet" />
           <NavigationProperty Name="ClientsSet" Relationship="Self.FK_SupplySet_ClientsSet" FromRole="SupplySet" ToRole="ClientsSet" />
+          <NavigationProperty Name="DealSet" Relationship="Self.FK_DealSet_SupplySet" FromRole="SupplySet" ToRole="DealSet" />
           <NavigationProperty Name="RealEstateSet" Relationship="Self.FK_SupplySet_RealEstateSet" FromRole="SupplySet" ToRole="RealEstateSet" />
-          <NavigationProperty Name="RealtorsSet" Relationship="Self.FK_SupplySet_RealtorsSet" FromRole="SupplySet" ToRole="RealtorsSet" />
         </EntityType>
+        <Association Name="FK_DemandSet_AgentsSet">
+          <End Role="AgentsSet" Type="Self.AgentsSet" Multiplicity="1" />
+          <End Role="DemandSet" Type="Self.DemandSet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AgentsSet">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DemandSet">
+              <PropertyRef Name="IdAgent" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SupplySet_AgentsSet">
+          <End Role="AgentsSet" Type="Self.AgentsSet" Multiplicity="1" />
+          <End Role="SupplySet" Type="Self.SupplySet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AgentsSet">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SupplySet">
+              <PropertyRef Name="IdAgent" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DemandSet_ClientsSet">
+          <End Role="ClientsSet" Type="Self.ClientsSet" Multiplicity="1" />
+          <End Role="DemandSet" Type="Self.DemandSet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ClientsSet">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DemandSet">
+              <PropertyRef Name="IdClient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_SupplySet_ClientsSet">
           <End Role="ClientsSet" Type="Self.ClientsSet" Multiplicity="1" />
           <End Role="SupplySet" Type="Self.SupplySet" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="ClientsSet">
-              <PropertyRef Name="id" />
+              <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="SupplySet">
               <PropertyRef Name="IdClient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DealSet_DemandSet">
+          <End Role="DemandSet" Type="Self.DemandSet" Multiplicity="1" />
+          <End Role="DealSet" Type="Self.DealSet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DemandSet">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DealSet">
+              <PropertyRef Name="IdDemand" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DealSet_SupplySet">
+          <End Role="SupplySet" Type="Self.SupplySet" Multiplicity="1" />
+          <End Role="DealSet" Type="Self.DealSet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SupplySet">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DealSet">
+              <PropertyRef Name="IdSupply" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -190,33 +378,39 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_SupplySet_RealtorsSet">
-          <End Role="RealtorsSet" Type="Self.RealtorsSet" Multiplicity="1" />
-          <End Role="SupplySet" Type="Self.SupplySet" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="RealtorsSet">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="SupplySet">
-              <PropertyRef Name="IdAgent" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityContainer Name="WFTutorialEntities9" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="WFTutorialEntities10" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AgentsSet" EntityType="Self.AgentsSet" />
           <EntitySet Name="ClientsSet" EntityType="Self.ClientsSet" />
+          <EntitySet Name="DealSet" EntityType="Self.DealSet" />
+          <EntitySet Name="DemandSet" EntityType="Self.DemandSet" />
           <EntitySet Name="RealEstateSet" EntityType="Self.RealEstateSet" />
-          <EntitySet Name="RealtorsSet" EntityType="Self.RealtorsSet" />
           <EntitySet Name="SupplySet" EntityType="Self.SupplySet" />
+          <AssociationSet Name="FK_DemandSet_AgentsSet" Association="Self.FK_DemandSet_AgentsSet">
+            <End Role="AgentsSet" EntitySet="AgentsSet" />
+            <End Role="DemandSet" EntitySet="DemandSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SupplySet_AgentsSet" Association="Self.FK_SupplySet_AgentsSet">
+            <End Role="AgentsSet" EntitySet="AgentsSet" />
+            <End Role="SupplySet" EntitySet="SupplySet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DemandSet_ClientsSet" Association="Self.FK_DemandSet_ClientsSet">
+            <End Role="ClientsSet" EntitySet="ClientsSet" />
+            <End Role="DemandSet" EntitySet="DemandSet" />
+          </AssociationSet>
           <AssociationSet Name="FK_SupplySet_ClientsSet" Association="Self.FK_SupplySet_ClientsSet">
             <End Role="ClientsSet" EntitySet="ClientsSet" />
             <End Role="SupplySet" EntitySet="SupplySet" />
           </AssociationSet>
+          <AssociationSet Name="FK_DealSet_DemandSet" Association="Self.FK_DealSet_DemandSet">
+            <End Role="DemandSet" EntitySet="DemandSet" />
+            <End Role="DealSet" EntitySet="DealSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DealSet_SupplySet" Association="Self.FK_DealSet_SupplySet">
+            <End Role="SupplySet" EntitySet="SupplySet" />
+            <End Role="DealSet" EntitySet="DealSet" />
+          </AssociationSet>
           <AssociationSet Name="FK_SupplySet_RealEstateSet" Association="Self.FK_SupplySet_RealEstateSet">
             <End Role="RealEstateSet" EntitySet="RealEstateSet" />
-            <End Role="SupplySet" EntitySet="SupplySet" />
-          </AssociationSet>
-          <AssociationSet Name="FK_SupplySet_RealtorsSet" Association="Self.FK_SupplySet_RealtorsSet">
-            <End Role="RealtorsSet" EntitySet="RealtorsSet" />
             <End Role="SupplySet" EntitySet="SupplySet" />
           </AssociationSet>
         </EntityContainer>
@@ -225,16 +419,56 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище WFTutorialModelContainer" CdmEntityContainer="WFTutorialEntities9">
+        <EntityContainerMapping StorageEntityContainer="Хранилище WFTutorialModelContainer" CdmEntityContainer="WFTutorialEntities10">
+          <EntitySetMapping Name="AgentsSet">
+            <EntityTypeMapping TypeName="WFTutorialModel.AgentsSet">
+              <MappingFragment StoreEntitySet="AgentsSet">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="Share" ColumnName="Share" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="ClientsSet">
             <EntityTypeMapping TypeName="WFTutorialModel.ClientsSet">
               <MappingFragment StoreEntitySet="ClientsSet">
-                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="FirtsName" ColumnName="FirtsName" />
                 <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
                 <ScalarProperty Name="LastName" ColumnName="LastName" />
                 <ScalarProperty Name="Phone" ColumnName="Phone" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DealSet">
+            <EntityTypeMapping TypeName="WFTutorialModel.DealSet">
+              <MappingFragment StoreEntitySet="DealSet">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IdSupply" ColumnName="IdSupply" />
+                <ScalarProperty Name="IdDemand" ColumnName="IdDemand" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DemandSet">
+            <EntityTypeMapping TypeName="WFTutorialModel.DemandSet">
+              <MappingFragment StoreEntitySet="DemandSet">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IdAgent" ColumnName="IdAgent" />
+                <ScalarProperty Name="IdClient" ColumnName="IdClient" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="MinPrice" ColumnName="MinPrice" />
+                <ScalarProperty Name="MaxPrice" ColumnName="MaxPrice" />
+                <ScalarProperty Name="MinArea" ColumnName="MinArea" />
+                <ScalarProperty Name="MaxArea" ColumnName="MaxArea" />
+                <ScalarProperty Name="MinRooms" ColumnName="MinRooms" />
+                <ScalarProperty Name="MaxRooms" ColumnName="MaxRooms" />
+                <ScalarProperty Name="MinFloor" ColumnName="MinFloor" />
+                <ScalarProperty Name="MaxFloor" ColumnName="MaxFloor" />
+                <ScalarProperty Name="MinFloors" ColumnName="MinFloors" />
+                <ScalarProperty Name="MaxFloors" ColumnName="MaxFloors" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -253,17 +487,6 @@
                 <ScalarProperty Name="TotalFloors" ColumnName="TotalFloors" />
                 <ScalarProperty Name="Rooms" ColumnName="Rooms" />
                 <ScalarProperty Name="Floor" ColumnName="Floor" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="RealtorsSet">
-            <EntityTypeMapping TypeName="WFTutorialModel.RealtorsSet">
-              <MappingFragment StoreEntitySet="RealtorsSet">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="LastName" ColumnName="LastName" />
-                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
-                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
-                <ScalarProperty Name="Share" ColumnName="Share" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

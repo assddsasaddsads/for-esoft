@@ -46,7 +46,7 @@ namespace Esoft_Project
                 ListViewItem item = new ListViewItem(new string[]
                     {
                         //указываем необходимые поля
-                        clientsSet.id.ToString(), clientsSet.FirtsName, clientsSet.MiddleName,
+                        clientsSet.Id.ToString(), clientsSet.FirtsName, clientsSet.MiddleName,
                         clientsSet.LastName, clientsSet.Phone, clientsSet.Email
 });
                 //указываю по какому тегу будет брать элементы
