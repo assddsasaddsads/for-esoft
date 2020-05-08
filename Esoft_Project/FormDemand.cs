@@ -525,5 +525,10 @@ namespace Esoft_Project
                 MessageBox.Show("Невозможно удалить, эта записать используется", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void labelMinFloors_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

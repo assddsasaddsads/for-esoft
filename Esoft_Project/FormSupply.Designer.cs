@@ -29,6 +29,13 @@
         private void InitializeComponent()
         {
             this.listViewSupplySet = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.labelAgent = new System.Windows.Forms.Label();
             this.labelClient = new System.Windows.Forms.Label();
             this.labelRealEstate = new System.Windows.Forms.Label();
@@ -40,13 +47,6 @@
             this.comboBoxAgents = new System.Windows.Forms.ComboBox();
             this.comboBoxClients = new System.Windows.Forms.ComboBox();
             this.comboBoxRealEstate = new System.Windows.Forms.ComboBox();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -72,6 +72,35 @@
             this.listViewSupplySet.UseCompatibleStateImageBehavior = false;
             this.listViewSupplySet.View = System.Windows.Forms.View.Details;
             this.listViewSupplySet.SelectedIndexChanged += new System.EventHandler(this.listViewSupplySet_SelectedIndexChanged);
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "ID Риелтора";
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Клиент ";
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "ID клиента";
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "ФИО клиента";
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "ID объекта недвижимости";
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Адрес объекта недвижимости";
+            this.columnHeader6.Width = 100;
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Цена";
             // 
             // labelAgent
             // 
@@ -111,6 +140,8 @@
             // 
             // textBoxPrice
             // 
+            this.textBoxPrice.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.textBoxPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxPrice.Location = new System.Drawing.Point(12, 241);
             this.textBoxPrice.Name = "textBoxPrice";
             this.textBoxPrice.Size = new System.Drawing.Size(224, 20);
@@ -118,36 +149,44 @@
             // 
             // buttonAdd
             // 
-            this.buttonAdd.Location = new System.Drawing.Point(522, 330);
+            this.buttonAdd.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.buttonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAdd.Location = new System.Drawing.Point(510, 293);
             this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(75, 23);
+            this.buttonAdd.Size = new System.Drawing.Size(82, 36);
             this.buttonAdd.TabIndex = 6;
             this.buttonAdd.Text = "Создать";
-            this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.UseVisualStyleBackColor = false;
             this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // buttonEdit
             // 
-            this.buttonEdit.Location = new System.Drawing.Point(603, 330);
+            this.buttonEdit.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.buttonEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonEdit.Location = new System.Drawing.Point(598, 293);
             this.buttonEdit.Name = "buttonEdit";
-            this.buttonEdit.Size = new System.Drawing.Size(75, 23);
+            this.buttonEdit.Size = new System.Drawing.Size(82, 36);
             this.buttonEdit.TabIndex = 7;
             this.buttonEdit.Text = "Изменить";
-            this.buttonEdit.UseVisualStyleBackColor = true;
+            this.buttonEdit.UseVisualStyleBackColor = false;
             this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
             // 
             // buttonDel
             // 
-            this.buttonDel.Location = new System.Drawing.Point(684, 330);
+            this.buttonDel.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.buttonDel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDel.Location = new System.Drawing.Point(686, 293);
             this.buttonDel.Name = "buttonDel";
-            this.buttonDel.Size = new System.Drawing.Size(75, 23);
+            this.buttonDel.Size = new System.Drawing.Size(82, 36);
             this.buttonDel.TabIndex = 8;
             this.buttonDel.Text = "Удалить";
-            this.buttonDel.UseVisualStyleBackColor = true;
+            this.buttonDel.UseVisualStyleBackColor = false;
             this.buttonDel.Click += new System.EventHandler(this.buttonDel_Click);
             // 
             // comboBoxAgents
             // 
+            this.comboBoxAgents.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.comboBoxAgents.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxAgents.FormattingEnabled = true;
             this.comboBoxAgents.Location = new System.Drawing.Point(12, 108);
             this.comboBoxAgents.Name = "comboBoxAgents";
@@ -156,6 +195,8 @@
             // 
             // comboBoxClients
             // 
+            this.comboBoxClients.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.comboBoxClients.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxClients.FormattingEnabled = true;
             this.comboBoxClients.Location = new System.Drawing.Point(12, 153);
             this.comboBoxClients.Name = "comboBoxClients";
@@ -164,40 +205,13 @@
             // 
             // comboBoxRealEstate
             // 
+            this.comboBoxRealEstate.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.comboBoxRealEstate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxRealEstate.FormattingEnabled = true;
             this.comboBoxRealEstate.Location = new System.Drawing.Point(12, 198);
             this.comboBoxRealEstate.Name = "comboBoxRealEstate";
             this.comboBoxRealEstate.Size = new System.Drawing.Size(224, 21);
             this.comboBoxRealEstate.TabIndex = 11;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "ID Риелтора";
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Клиент ";
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "ID клиента";
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "ФИО клиента";
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "ID объекта недвижимости";
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "Адрес объекта недвижимости";
-            this.columnHeader6.Width = 100;
-            // 
-            // columnHeader7
-            // 
-            this.columnHeader7.Text = "Цена";
             // 
             // pictureBox1
             // 
@@ -212,7 +226,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(771, 379);
+            this.ClientSize = new System.Drawing.Size(771, 341);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.comboBoxRealEstate);
             this.Controls.Add(this.comboBoxClients);

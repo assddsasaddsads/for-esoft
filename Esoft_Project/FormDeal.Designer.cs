@@ -56,6 +56,9 @@
             // 
             // comboBoxSupply
             // 
+            this.comboBoxSupply.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.comboBoxSupply.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxSupply.ForeColor = System.Drawing.SystemColors.WindowText;
             this.comboBoxSupply.FormattingEnabled = true;
             this.comboBoxSupply.Location = new System.Drawing.Point(12, 100);
             this.comboBoxSupply.Name = "comboBoxSupply";
@@ -65,6 +68,8 @@
             // 
             // comboBoxDemand
             // 
+            this.comboBoxDemand.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.comboBoxDemand.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxDemand.FormattingEnabled = true;
             this.comboBoxDemand.Location = new System.Drawing.Point(12, 140);
             this.comboBoxDemand.Name = "comboBoxDemand";
@@ -84,7 +89,7 @@
             // labelDemand
             // 
             this.labelDemand.AutoSize = true;
-            this.labelDemand.Location = new System.Drawing.Point(12, 124);
+            this.labelDemand.Location = new System.Drawing.Point(9, 124);
             this.labelDemand.Name = "labelDemand";
             this.labelDemand.Size = new System.Drawing.Size(73, 13);
             this.labelDemand.TabIndex = 3;
@@ -128,6 +133,8 @@
             // 
             // textBoxSellerCompanyDeductions
             // 
+            this.textBoxSellerCompanyDeductions.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.textBoxSellerCompanyDeductions.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxSellerCompanyDeductions.Location = new System.Drawing.Point(12, 182);
             this.textBoxSellerCompanyDeductions.Name = "textBoxSellerCompanyDeductions";
             this.textBoxSellerCompanyDeductions.Size = new System.Drawing.Size(215, 20);
@@ -135,6 +142,8 @@
             // 
             // textBoxAgentSellerDeductions
             // 
+            this.textBoxAgentSellerDeductions.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.textBoxAgentSellerDeductions.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxAgentSellerDeductions.Location = new System.Drawing.Point(12, 223);
             this.textBoxAgentSellerDeductions.Name = "textBoxAgentSellerDeductions";
             this.textBoxAgentSellerDeductions.Size = new System.Drawing.Size(215, 20);
@@ -142,6 +151,8 @@
             // 
             // textCustomerCompanyDeductions
             // 
+            this.textCustomerCompanyDeductions.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.textCustomerCompanyDeductions.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textCustomerCompanyDeductions.Location = new System.Drawing.Point(12, 262);
             this.textCustomerCompanyDeductions.Name = "textCustomerCompanyDeductions";
             this.textCustomerCompanyDeductions.Size = new System.Drawing.Size(215, 20);
@@ -149,6 +160,8 @@
             // 
             // textBoxAgentCustomerDeductions
             // 
+            this.textBoxAgentCustomerDeductions.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.textBoxAgentCustomerDeductions.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxAgentCustomerDeductions.Location = new System.Drawing.Point(12, 303);
             this.textBoxAgentCustomerDeductions.Name = "textBoxAgentCustomerDeductions";
             this.textBoxAgentCustomerDeductions.Size = new System.Drawing.Size(215, 20);
@@ -201,32 +214,38 @@
             // 
             // buttonAdd
             // 
-            this.buttonAdd.Location = new System.Drawing.Point(509, 374);
+            this.buttonAdd.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.buttonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAdd.Location = new System.Drawing.Point(526, 374);
             this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(86, 34);
+            this.buttonAdd.Size = new System.Drawing.Size(82, 36);
             this.buttonAdd.TabIndex = 13;
             this.buttonAdd.Text = "Создать";
-            this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.UseVisualStyleBackColor = false;
             this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // buttonEdit
             // 
-            this.buttonEdit.Location = new System.Drawing.Point(607, 374);
+            this.buttonEdit.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.buttonEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonEdit.Location = new System.Drawing.Point(614, 374);
             this.buttonEdit.Name = "buttonEdit";
-            this.buttonEdit.Size = new System.Drawing.Size(86, 34);
+            this.buttonEdit.Size = new System.Drawing.Size(82, 36);
             this.buttonEdit.TabIndex = 14;
             this.buttonEdit.Text = "Изменить";
-            this.buttonEdit.UseVisualStyleBackColor = true;
+            this.buttonEdit.UseVisualStyleBackColor = false;
             this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
             // 
             // buttonDel
             // 
+            this.buttonDel.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.buttonDel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDel.Location = new System.Drawing.Point(702, 374);
             this.buttonDel.Name = "buttonDel";
-            this.buttonDel.Size = new System.Drawing.Size(86, 34);
+            this.buttonDel.Size = new System.Drawing.Size(82, 36);
             this.buttonDel.TabIndex = 15;
             this.buttonDel.Text = "Удалить";
-            this.buttonDel.UseVisualStyleBackColor = true;
+            this.buttonDel.UseVisualStyleBackColor = false;
             this.buttonDel.Click += new System.EventHandler(this.buttonDel_Click);
             // 
             // pictureBox1
@@ -242,7 +261,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 421);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.buttonDel);
             this.Controls.Add(this.buttonEdit);

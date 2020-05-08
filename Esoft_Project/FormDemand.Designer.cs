@@ -90,6 +90,8 @@
             // 
             // comboBoxClients
             // 
+            this.comboBoxClients.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.comboBoxClients.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxClients.FormattingEnabled = true;
             this.comboBoxClients.Location = new System.Drawing.Point(2, 21);
             this.comboBoxClients.Name = "comboBoxClients";
@@ -98,6 +100,8 @@
             // 
             // comboBoxAgents
             // 
+            this.comboBoxAgents.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.comboBoxAgents.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxAgents.FormattingEnabled = true;
             this.comboBoxAgents.Location = new System.Drawing.Point(129, 21);
             this.comboBoxAgents.Name = "comboBoxAgents";
@@ -106,6 +110,8 @@
             // 
             // comboBoxRealEstate
             // 
+            this.comboBoxRealEstate.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.comboBoxRealEstate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxRealEstate.FormattingEnabled = true;
             this.comboBoxRealEstate.Items.AddRange(new object[] {
             "Квартира",
@@ -120,6 +126,7 @@
             // labelClients
             // 
             this.labelClients.AutoSize = true;
+            this.labelClients.BackColor = System.Drawing.SystemColors.Control;
             this.labelClients.Location = new System.Drawing.Point(-1, 5);
             this.labelClients.Name = "labelClients";
             this.labelClients.Size = new System.Drawing.Size(43, 13);
@@ -129,6 +136,7 @@
             // labelAgents
             // 
             this.labelAgents.AutoSize = true;
+            this.labelAgents.BackColor = System.Drawing.SystemColors.Control;
             this.labelAgents.Location = new System.Drawing.Point(126, 5);
             this.labelAgents.Name = "labelAgents";
             this.labelAgents.Size = new System.Drawing.Size(49, 13);
@@ -138,6 +146,7 @@
             // labelRealEstate
             // 
             this.labelRealEstate.AutoSize = true;
+            this.labelRealEstate.BackColor = System.Drawing.SystemColors.Control;
             this.labelRealEstate.Location = new System.Drawing.Point(-1, 46);
             this.labelRealEstate.Name = "labelRealEstate";
             this.labelRealEstate.Size = new System.Drawing.Size(149, 13);
@@ -217,6 +226,8 @@
             // 
             // textBoxMinPrice
             // 
+            this.textBoxMinPrice.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.textBoxMinPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxMinPrice.Location = new System.Drawing.Point(2, 106);
             this.textBoxMinPrice.Name = "textBoxMinPrice";
             this.textBoxMinPrice.Size = new System.Drawing.Size(121, 20);
@@ -224,6 +235,8 @@
             // 
             // textBoxMaxPrice
             // 
+            this.textBoxMaxPrice.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.textBoxMaxPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxMaxPrice.Location = new System.Drawing.Point(2, 147);
             this.textBoxMaxPrice.Name = "textBoxMaxPrice";
             this.textBoxMaxPrice.Size = new System.Drawing.Size(121, 20);
@@ -232,6 +245,7 @@
             // labelMinPrice
             // 
             this.labelMinPrice.AutoSize = true;
+            this.labelMinPrice.BackColor = System.Drawing.SystemColors.Control;
             this.labelMinPrice.Location = new System.Drawing.Point(-1, 90);
             this.labelMinPrice.Name = "labelMinPrice";
             this.labelMinPrice.Size = new System.Drawing.Size(105, 13);
@@ -241,6 +255,7 @@
             // labelMaxPrice
             // 
             this.labelMaxPrice.AutoSize = true;
+            this.labelMaxPrice.BackColor = System.Drawing.SystemColors.Control;
             this.labelMaxPrice.Location = new System.Drawing.Point(-1, 131);
             this.labelMaxPrice.Name = "labelMaxPrice";
             this.labelMaxPrice.Size = new System.Drawing.Size(111, 13);
@@ -249,32 +264,38 @@
             // 
             // buttonAdd
             // 
-            this.buttonAdd.Location = new System.Drawing.Point(586, 407);
+            this.buttonAdd.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.buttonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAdd.Location = new System.Drawing.Point(577, 403);
             this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(79, 36);
+            this.buttonAdd.Size = new System.Drawing.Size(82, 36);
             this.buttonAdd.TabIndex = 11;
             this.buttonAdd.Text = "Создать";
-            this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.UseVisualStyleBackColor = false;
             this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // buttonEdit
             // 
-            this.buttonEdit.Location = new System.Drawing.Point(671, 407);
+            this.buttonEdit.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.buttonEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonEdit.Location = new System.Drawing.Point(665, 403);
             this.buttonEdit.Name = "buttonEdit";
-            this.buttonEdit.Size = new System.Drawing.Size(79, 36);
+            this.buttonEdit.Size = new System.Drawing.Size(82, 36);
             this.buttonEdit.TabIndex = 12;
             this.buttonEdit.Text = "Изменить";
-            this.buttonEdit.UseVisualStyleBackColor = true;
+            this.buttonEdit.UseVisualStyleBackColor = false;
             this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
             // 
             // buttonDel
             // 
-            this.buttonDel.Location = new System.Drawing.Point(756, 407);
+            this.buttonDel.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.buttonDel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDel.Location = new System.Drawing.Point(753, 403);
             this.buttonDel.Name = "buttonDel";
-            this.buttonDel.Size = new System.Drawing.Size(79, 36);
+            this.buttonDel.Size = new System.Drawing.Size(82, 36);
             this.buttonDel.TabIndex = 13;
             this.buttonDel.Text = "Удалить";
-            this.buttonDel.UseVisualStyleBackColor = true;
+            this.buttonDel.UseVisualStyleBackColor = false;
             this.buttonDel.Click += new System.EventHandler(this.buttonDel_Click);
             // 
             // listViewHouse
@@ -391,6 +412,8 @@
             // 
             // textBoxMinArea
             // 
+            this.textBoxMinArea.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.textBoxMinArea.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxMinArea.Location = new System.Drawing.Point(2, 189);
             this.textBoxMinArea.Name = "textBoxMinArea";
             this.textBoxMinArea.Size = new System.Drawing.Size(121, 20);
@@ -398,6 +421,8 @@
             // 
             // textBoxMaxArea
             // 
+            this.textBoxMaxArea.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.textBoxMaxArea.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxMaxArea.Location = new System.Drawing.Point(2, 228);
             this.textBoxMaxArea.Name = "textBoxMaxArea";
             this.textBoxMaxArea.Size = new System.Drawing.Size(121, 20);
@@ -406,6 +431,7 @@
             // labelMinArea
             // 
             this.labelMinArea.AutoSize = true;
+            this.labelMinArea.BackColor = System.Drawing.SystemColors.Control;
             this.labelMinArea.Location = new System.Drawing.Point(-1, 173);
             this.labelMinArea.Name = "labelMinArea";
             this.labelMinArea.Size = new System.Drawing.Size(126, 13);
@@ -415,6 +441,7 @@
             // labelMaxArea
             // 
             this.labelMaxArea.AutoSize = true;
+            this.labelMaxArea.BackColor = System.Drawing.SystemColors.Control;
             this.labelMaxArea.Location = new System.Drawing.Point(-1, 212);
             this.labelMaxArea.Name = "labelMaxArea";
             this.labelMaxArea.Size = new System.Drawing.Size(132, 13);
@@ -424,7 +451,8 @@
             // labelMinFloor
             // 
             this.labelMinFloor.AutoSize = true;
-            this.labelMinFloor.Location = new System.Drawing.Point(-1, 255);
+            this.labelMinFloor.BackColor = System.Drawing.SystemColors.Control;
+            this.labelMinFloor.Location = new System.Drawing.Point(-1, 257);
             this.labelMinFloor.Name = "labelMinFloor";
             this.labelMinFloor.Size = new System.Drawing.Size(108, 13);
             this.labelMinFloor.TabIndex = 20;
@@ -433,7 +461,8 @@
             // labelMaxFloor
             // 
             this.labelMaxFloor.AutoSize = true;
-            this.labelMaxFloor.Location = new System.Drawing.Point(-1, 292);
+            this.labelMaxFloor.BackColor = System.Drawing.SystemColors.Control;
+            this.labelMaxFloor.Location = new System.Drawing.Point(-1, 290);
             this.labelMaxFloor.Name = "labelMaxFloor";
             this.labelMaxFloor.Size = new System.Drawing.Size(114, 13);
             this.labelMaxFloor.TabIndex = 21;
@@ -441,14 +470,18 @@
             // 
             // textBoxMaxFloor
             // 
-            this.textBoxMaxFloor.Location = new System.Drawing.Point(2, 308);
+            this.textBoxMaxFloor.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.textBoxMaxFloor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxMaxFloor.Location = new System.Drawing.Point(2, 306);
             this.textBoxMaxFloor.Name = "textBoxMaxFloor";
             this.textBoxMaxFloor.Size = new System.Drawing.Size(121, 20);
             this.textBoxMaxFloor.TabIndex = 22;
             // 
             // textBoxMinFloor
             // 
-            this.textBoxMinFloor.Location = new System.Drawing.Point(2, 271);
+            this.textBoxMinFloor.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.textBoxMinFloor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxMinFloor.Location = new System.Drawing.Point(2, 269);
             this.textBoxMinFloor.Name = "textBoxMinFloor";
             this.textBoxMinFloor.Size = new System.Drawing.Size(121, 20);
             this.textBoxMinFloor.TabIndex = 23;
@@ -456,6 +489,7 @@
             // labelMinKolKom
             // 
             this.labelMinKolKom.AutoSize = true;
+            this.labelMinKolKom.BackColor = System.Drawing.SystemColors.Control;
             this.labelMinKolKom.Location = new System.Drawing.Point(-1, 328);
             this.labelMinKolKom.Name = "labelMinKolKom";
             this.labelMinKolKom.Size = new System.Drawing.Size(154, 13);
@@ -465,6 +499,7 @@
             // labelMaxKolKom
             // 
             this.labelMaxKolKom.AutoSize = true;
+            this.labelMaxKolKom.BackColor = System.Drawing.SystemColors.Control;
             this.labelMaxKolKom.Location = new System.Drawing.Point(-1, 366);
             this.labelMaxKolKom.Name = "labelMaxKolKom";
             this.labelMaxKolKom.Size = new System.Drawing.Size(160, 13);
@@ -473,6 +508,8 @@
             // 
             // textBoxMinKolKom
             // 
+            this.textBoxMinKolKom.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.textBoxMinKolKom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxMinKolKom.Location = new System.Drawing.Point(2, 344);
             this.textBoxMinKolKom.Name = "textBoxMinKolKom";
             this.textBoxMinKolKom.Size = new System.Drawing.Size(121, 20);
@@ -480,6 +517,8 @@
             // 
             // textBoxMaxKolKom
             // 
+            this.textBoxMaxKolKom.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.textBoxMaxKolKom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxMaxKolKom.Location = new System.Drawing.Point(2, 382);
             this.textBoxMaxKolKom.Name = "textBoxMaxKolKom";
             this.textBoxMaxKolKom.Size = new System.Drawing.Size(121, 20);
@@ -488,16 +527,19 @@
             // labelMinFloors
             // 
             this.labelMinFloors.AutoSize = true;
-            this.labelMinFloors.Location = new System.Drawing.Point(-1, 255);
+            this.labelMinFloors.BackColor = System.Drawing.SystemColors.Control;
+            this.labelMinFloors.Location = new System.Drawing.Point(-1, 257);
             this.labelMinFloors.Name = "labelMinFloors";
             this.labelMinFloors.Size = new System.Drawing.Size(108, 13);
             this.labelMinFloors.TabIndex = 28;
             this.labelMinFloors.Text = "Минимальный этаж";
+            this.labelMinFloors.Click += new System.EventHandler(this.labelMinFloors_Click);
             // 
             // labelMaxFloors
             // 
             this.labelMaxFloors.AutoSize = true;
-            this.labelMaxFloors.Location = new System.Drawing.Point(-1, 292);
+            this.labelMaxFloors.BackColor = System.Drawing.SystemColors.Control;
+            this.labelMaxFloors.Location = new System.Drawing.Point(-1, 289);
             this.labelMaxFloors.Name = "labelMaxFloors";
             this.labelMaxFloors.Size = new System.Drawing.Size(114, 13);
             this.labelMaxFloors.TabIndex = 29;
@@ -505,14 +547,18 @@
             // 
             // textBoxMinFloors
             // 
-            this.textBoxMinFloors.Location = new System.Drawing.Point(2, 271);
+            this.textBoxMinFloors.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.textBoxMinFloors.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxMinFloors.Location = new System.Drawing.Point(2, 269);
             this.textBoxMinFloors.Name = "textBoxMinFloors";
             this.textBoxMinFloors.Size = new System.Drawing.Size(121, 20);
             this.textBoxMinFloors.TabIndex = 30;
             // 
             // textBoxMaxFloors
             // 
-            this.textBoxMaxFloors.Location = new System.Drawing.Point(2, 308);
+            this.textBoxMaxFloors.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.textBoxMaxFloors.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxMaxFloors.Location = new System.Drawing.Point(2, 305);
             this.textBoxMaxFloors.Name = "textBoxMaxFloors";
             this.textBoxMaxFloors.Size = new System.Drawing.Size(121, 20);
             this.textBoxMaxFloors.TabIndex = 31;
@@ -565,7 +611,7 @@
             this.Controls.Add(this.comboBoxAgents);
             this.Controls.Add(this.comboBoxClients);
             this.Name = "FormDemand";
-            this.Text = " ";
+            this.Text = " Потребности";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

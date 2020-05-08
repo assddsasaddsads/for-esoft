@@ -51,16 +51,20 @@
             // 
             // buttonAdd
             // 
+            this.buttonAdd.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.buttonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAdd.Location = new System.Drawing.Point(414, 414);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(82, 36);
             this.buttonAdd.TabIndex = 0;
             this.buttonAdd.Text = "Создать";
-            this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.UseVisualStyleBackColor = false;
             this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // textBoxLastName
             // 
+            this.textBoxLastName.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.textBoxLastName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxLastName.Location = new System.Drawing.Point(12, 102);
             this.textBoxLastName.Name = "textBoxLastName";
             this.textBoxLastName.Size = new System.Drawing.Size(110, 20);
@@ -68,6 +72,8 @@
             // 
             // textBoxFirstName
             // 
+            this.textBoxFirstName.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.textBoxFirstName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxFirstName.Location = new System.Drawing.Point(12, 142);
             this.textBoxFirstName.Name = "textBoxFirstName";
             this.textBoxFirstName.Size = new System.Drawing.Size(110, 20);
@@ -75,6 +81,8 @@
             // 
             // textBoxMiddleName
             // 
+            this.textBoxMiddleName.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.textBoxMiddleName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxMiddleName.Location = new System.Drawing.Point(12, 183);
             this.textBoxMiddleName.Name = "textBoxMiddleName";
             this.textBoxMiddleName.Size = new System.Drawing.Size(110, 20);
@@ -82,6 +90,8 @@
             // 
             // textBoxShare
             // 
+            this.textBoxShare.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.textBoxShare.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxShare.Location = new System.Drawing.Point(12, 222);
             this.textBoxShare.Name = "textBoxShare";
             this.textBoxShare.Size = new System.Drawing.Size(110, 20);
@@ -125,22 +135,26 @@
             // 
             // buttonEdit
             // 
+            this.buttonEdit.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.buttonEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonEdit.Location = new System.Drawing.Point(502, 414);
             this.buttonEdit.Name = "buttonEdit";
             this.buttonEdit.Size = new System.Drawing.Size(82, 36);
             this.buttonEdit.TabIndex = 10;
             this.buttonEdit.Text = "Изменить";
-            this.buttonEdit.UseVisualStyleBackColor = true;
+            this.buttonEdit.UseVisualStyleBackColor = false;
             this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
             // 
             // buttonDel
             // 
+            this.buttonDel.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.buttonDel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDel.Location = new System.Drawing.Point(590, 414);
             this.buttonDel.Name = "buttonDel";
             this.buttonDel.Size = new System.Drawing.Size(82, 36);
             this.buttonDel.TabIndex = 11;
             this.buttonDel.Text = "Удалить";
-            this.buttonDel.UseVisualStyleBackColor = true;
+            this.buttonDel.UseVisualStyleBackColor = false;
             this.buttonDel.Click += new System.EventHandler(this.buttonDel_Click);
             // 
             // listViewRealtors

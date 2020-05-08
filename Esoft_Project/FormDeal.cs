@@ -154,6 +154,7 @@ namespace Esoft_Project
                 item.Tag = deal;
                 //добавляем элементы в listViewRealEstateSet_Apartment для отображения
                 listViewDealSet.Items.Add(item);
+                listViewDealSet.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
             }
         }
 

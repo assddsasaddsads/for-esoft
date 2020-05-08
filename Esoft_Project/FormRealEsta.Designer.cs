@@ -86,6 +86,8 @@
             // 
             // textBoxAddress_City
             // 
+            this.textBoxAddress_City.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.textBoxAddress_City.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxAddress_City.Location = new System.Drawing.Point(12, 14);
             this.textBoxAddress_City.Name = "textBoxAddress_City";
             this.textBoxAddress_City.Size = new System.Drawing.Size(139, 20);
@@ -93,6 +95,8 @@
             // 
             // textBoxAddress_Street
             // 
+            this.textBoxAddress_Street.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.textBoxAddress_Street.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxAddress_Street.Location = new System.Drawing.Point(12, 54);
             this.textBoxAddress_Street.Name = "textBoxAddress_Street";
             this.textBoxAddress_Street.Size = new System.Drawing.Size(139, 20);
@@ -100,6 +104,8 @@
             // 
             // textBoxAddress_House
             // 
+            this.textBoxAddress_House.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.textBoxAddress_House.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxAddress_House.Location = new System.Drawing.Point(12, 94);
             this.textBoxAddress_House.Name = "textBoxAddress_House";
             this.textBoxAddress_House.Size = new System.Drawing.Size(139, 20);
@@ -107,6 +113,8 @@
             // 
             // textBoxAddress_Number
             // 
+            this.textBoxAddress_Number.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.textBoxAddress_Number.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxAddress_Number.Location = new System.Drawing.Point(12, 133);
             this.textBoxAddress_Number.Name = "textBoxAddress_Number";
             this.textBoxAddress_Number.Size = new System.Drawing.Size(139, 20);
@@ -114,6 +122,8 @@
             // 
             // textBoxCoordinate_latitude
             // 
+            this.textBoxCoordinate_latitude.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.textBoxCoordinate_latitude.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxCoordinate_latitude.Location = new System.Drawing.Point(12, 174);
             this.textBoxCoordinate_latitude.Name = "textBoxCoordinate_latitude";
             this.textBoxCoordinate_latitude.Size = new System.Drawing.Size(139, 20);
@@ -121,6 +131,8 @@
             // 
             // textBoxCoordinate_longitude
             // 
+            this.textBoxCoordinate_longitude.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.textBoxCoordinate_longitude.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxCoordinate_longitude.Location = new System.Drawing.Point(12, 213);
             this.textBoxCoordinate_longitude.Name = "textBoxCoordinate_longitude";
             this.textBoxCoordinate_longitude.Size = new System.Drawing.Size(139, 20);
@@ -128,6 +140,8 @@
             // 
             // textBoxTotalArea
             // 
+            this.textBoxTotalArea.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.textBoxTotalArea.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxTotalArea.Location = new System.Drawing.Point(12, 290);
             this.textBoxTotalArea.Name = "textBoxTotalArea";
             this.textBoxTotalArea.Size = new System.Drawing.Size(139, 20);
@@ -135,6 +149,8 @@
             // 
             // textBoxRooms
             // 
+            this.textBoxRooms.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.textBoxRooms.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxRooms.Location = new System.Drawing.Point(12, 333);
             this.textBoxRooms.Name = "textBoxRooms";
             this.textBoxRooms.Size = new System.Drawing.Size(139, 20);
@@ -142,6 +158,8 @@
             // 
             // textBoxFloor
             // 
+            this.textBoxFloor.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.textBoxFloor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxFloor.Location = new System.Drawing.Point(12, 374);
             this.textBoxFloor.Name = "textBoxFloor";
             this.textBoxFloor.Size = new System.Drawing.Size(139, 20);
@@ -149,6 +167,8 @@
             // 
             // textBoxTotalFloors
             // 
+            this.textBoxTotalFloors.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.textBoxTotalFloors.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxTotalFloors.Location = new System.Drawing.Point(12, 415);
             this.textBoxTotalFloors.Name = "textBoxTotalFloors";
             this.textBoxTotalFloors.Size = new System.Drawing.Size(139, 20);
@@ -268,10 +288,10 @@
             this.listViewRealEstateSet_Apartment.FullRowSelect = true;
             this.listViewRealEstateSet_Apartment.GridLines = true;
             this.listViewRealEstateSet_Apartment.HideSelection = false;
-            this.listViewRealEstateSet_Apartment.Location = new System.Drawing.Point(178, 94);
+            this.listViewRealEstateSet_Apartment.Location = new System.Drawing.Point(164, 94);
             this.listViewRealEstateSet_Apartment.MultiSelect = false;
             this.listViewRealEstateSet_Apartment.Name = "listViewRealEstateSet_Apartment";
-            this.listViewRealEstateSet_Apartment.Size = new System.Drawing.Size(601, 300);
+            this.listViewRealEstateSet_Apartment.Size = new System.Drawing.Size(624, 300);
             this.listViewRealEstateSet_Apartment.TabIndex = 21;
             this.listViewRealEstateSet_Apartment.UseCompatibleStateImageBehavior = false;
             this.listViewRealEstateSet_Apartment.View = System.Windows.Forms.View.Details;
@@ -326,10 +346,10 @@
             this.listViewRealEstateSet_House.FullRowSelect = true;
             this.listViewRealEstateSet_House.GridLines = true;
             this.listViewRealEstateSet_House.HideSelection = false;
-            this.listViewRealEstateSet_House.Location = new System.Drawing.Point(178, 94);
+            this.listViewRealEstateSet_House.Location = new System.Drawing.Point(164, 94);
             this.listViewRealEstateSet_House.MultiSelect = false;
             this.listViewRealEstateSet_House.Name = "listViewRealEstateSet_House";
-            this.listViewRealEstateSet_House.Size = new System.Drawing.Size(601, 300);
+            this.listViewRealEstateSet_House.Size = new System.Drawing.Size(624, 300);
             this.listViewRealEstateSet_House.TabIndex = 22;
             this.listViewRealEstateSet_House.UseCompatibleStateImageBehavior = false;
             this.listViewRealEstateSet_House.View = System.Windows.Forms.View.Details;
@@ -378,7 +398,7 @@
             this.listViewRealEstateSet_Land.FullRowSelect = true;
             this.listViewRealEstateSet_Land.GridLines = true;
             this.listViewRealEstateSet_Land.HideSelection = false;
-            this.listViewRealEstateSet_Land.Location = new System.Drawing.Point(178, 94);
+            this.listViewRealEstateSet_Land.Location = new System.Drawing.Point(164, 94);
             this.listViewRealEstateSet_Land.MultiSelect = false;
             this.listViewRealEstateSet_Land.Name = "listViewRealEstateSet_Land";
             this.listViewRealEstateSet_Land.Size = new System.Drawing.Size(624, 300);
@@ -422,36 +442,44 @@
             // 
             // buttonAdd
             // 
-            this.buttonAdd.Location = new System.Drawing.Point(569, 400);
+            this.buttonAdd.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.buttonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAdd.Location = new System.Drawing.Point(530, 399);
             this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(69, 36);
+            this.buttonAdd.Size = new System.Drawing.Size(82, 36);
             this.buttonAdd.TabIndex = 24;
             this.buttonAdd.Text = "Создать";
-            this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.UseVisualStyleBackColor = false;
             this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // buttonEdit
             // 
-            this.buttonEdit.Location = new System.Drawing.Point(644, 400);
+            this.buttonEdit.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.buttonEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonEdit.Location = new System.Drawing.Point(618, 399);
             this.buttonEdit.Name = "buttonEdit";
-            this.buttonEdit.Size = new System.Drawing.Size(69, 36);
+            this.buttonEdit.Size = new System.Drawing.Size(82, 36);
             this.buttonEdit.TabIndex = 25;
             this.buttonEdit.Text = "Изменить";
-            this.buttonEdit.UseVisualStyleBackColor = true;
+            this.buttonEdit.UseVisualStyleBackColor = false;
             this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
             // 
             // buttonDel
             // 
-            this.buttonDel.Location = new System.Drawing.Point(719, 400);
+            this.buttonDel.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.buttonDel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDel.Location = new System.Drawing.Point(706, 400);
             this.buttonDel.Name = "buttonDel";
-            this.buttonDel.Size = new System.Drawing.Size(69, 36);
+            this.buttonDel.Size = new System.Drawing.Size(82, 36);
             this.buttonDel.TabIndex = 26;
             this.buttonDel.Text = "Удалить";
-            this.buttonDel.UseVisualStyleBackColor = true;
+            this.buttonDel.UseVisualStyleBackColor = false;
             this.buttonDel.Click += new System.EventHandler(this.buttonDel_Click);
             // 
             // comboBoxType
             // 
+            this.comboBoxType.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.comboBoxType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxType.FormattingEnabled = true;
             this.comboBoxType.Items.AddRange(new object[] {
             "Квартира",

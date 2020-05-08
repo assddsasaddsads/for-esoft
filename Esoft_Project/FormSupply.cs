@@ -37,7 +37,7 @@ namespace Esoft_Project
                 string[] item = {realtorsSet.Id.ToString()+".", realtorsSet.FirstName, realtorsSet.MiddleName, realtorsSet.LastName};
                 comboBoxAgents.Items.Add(string.Join(" ", item));
             }
-
+            
         }
         void ShowClients()
         {
@@ -51,6 +51,7 @@ namespace Esoft_Project
                 string[] item = { clientsSet.Id.ToString() + ".", clientsSet.FirtsName, clientsSet.MiddleName, clientsSet.LastName };
                 comboBoxClients.Items.Add(string.Join("", item));
             }
+            
         }
         void ShowRealEstate()
         {
@@ -65,6 +66,7 @@ namespace Esoft_Project
                 "д. "+ realEstateSet.Address_House+ ",","кв. "+realEstateSet.Address_Number};
                 comboBoxRealEstate.Items.Add(string.Join(" ", item));
             }
+            
         }
 
         private void buttonAdd_Click(object sender, EventArgs e)
